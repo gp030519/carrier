@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <h2 class="title">Carrier Screening Decision Calculator</h2>
+    <div class="blurb">
+      This program is designed to be used in situations when a child is found to be a carrier of a single pathogenic or likely pathogenic variant in an autosomal recessive gene. It will calculate whether it is more cost-effective to do single-gene analysis for the parents or to reflex to expanded carrier testing.
+    </div>
+    <form class="inputs attractive-form" onsubmit="event.preventDefault(); calculateDecision();">
+      <div class="input-group">
+        <label for="csg">Cost of single gene testing for both parents ($)<br><span class="desc">If you already know carrier status of one parent, this may be lower than if you have to test both.</span></label>
+        <input type="number" id="csg" step="any" placeholder="e.g. 300">
+      </div>
+      <div class="input-group">
+        <label for="q">Percentage chance that expanded carrier screening will identify a carrier couple</label>
+        <input type="number" id="q" step="any" placeholder="2 in Mackenzie's Mission">
+      </div>
+      <div class="input-group">
+        <label for="cecs">Cost of expanded carrier screening for both parents ($)</label>
+        <input type="number" id="cecs" step="any" placeholder="e.g. 1500">
+      </div>
+      <div class="input-group">
+        <label for="p">Population carrier frequency of this condition: 1/x</label>
+        <input type="number" id="p" step="any" placeholder="e.g. 50 for 1/50">
+      </div>
+      <button type="submit" class="calc-btn attractive-btn">Calculate</button>
+    </form>
+    <div id="result" class="result attractive-result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
